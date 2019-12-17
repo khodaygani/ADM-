@@ -1,4 +1,6 @@
 from utils import get_distance_graph
+from utils import find_the_path
+
 import numpy as np
 
 
@@ -9,7 +11,7 @@ def functionality(starting_node, nodes_to_visit):
     ordered_nodes = __find_order(starting_node, nodes_to_visit, vertices)
 
     # than the best path to visit them
-    best_path = __bellman_ford(ordered_nodes)
+    best_path = find_the_path(edges, starting_node, ordered_nodes)
 
     return best_path  # than we return the best path
 
@@ -41,44 +43,4 @@ def __get_real_dist(node1, node2, coordinates):  # using the euclidean distance 
     return np.linalg.norm(np.array(coordinates[node1]) - np.array(coordinates[node2]))
 
 
-def __bellman_ford(list_to_visit):
-    return list_to_visit
 
-
-""" old functions:
-def __find_order_old(start, to_visit, edges):
-    ordered_path = [start]  # initialising with the first node, so we can start from the ordered_path[-1] node
-
-    while to_visit:
-        found_node = __bfs(ordered_path[-1], to_visit, edges)  # starting from the last node found
-        ordered_path.append(found_node)  # append it to the ordered path
-        to_visit.remove(found_node)  # removing the node from the searched nodes
-
-    del ordered_path[0]  # deleting the first node, that is start.
-
-    return ordered_path  # returning the ordered path
-
-
-def __bfs(start, targets, edges):
-    # first let's initialise the set that will stores the nodes we visited, we don't want to visit the same node
-    # more than once
-    visited = set()
-
-    # than creating the queue of the elements to visit
-    queue = [start]  # at the beginning we start with our starting node
-    visited.add(start)
-
-    while queue:  # iterating until the queue is not empty
-
-        # the lust element in the queue is the one to visit now.
-        actual_node = queue.pop()
-
-        if actual_node in targets: return actual_node
-
-        for neighbour, weight in edges[actual_node]:
-            if neighbour not in visited:
-                queue.insert(0, neighbour)  # at the beginning we start with our starting node
-                visited.add(neighbour)
-
-    raise Exception("Node not reachable")  # we didn't find the nodes. them are not reachable than.
-"""
