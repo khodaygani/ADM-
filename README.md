@@ -4,10 +4,10 @@ Repository for Homework 5
 
 dario part 1 
 
-once ready the graph:
-
 daniele func. 1
 
-grees. func. 3
+grees. func. 2
 
-dario func. 4
+dario func. 3 and 4
+
+
