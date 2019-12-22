@@ -1,13 +1,10 @@
 import utils
-# getting the data...
-utils.prepare_data()
 from utils import get_neigh
 from utils import d
 from utils import t
 from utils import get_distance_path
 from utils import get_path_underd
 
-# this the functionality 1
 # every time you try to run the functionality you have to define the empty list below
 # here i store all the nodes visited
 visited = []
@@ -33,7 +30,7 @@ def functionality_1(node_id, d):
                 functionality_1(i, dist_func, dist[i])
     return visited
 
-# final functionality to take all the nodes at distance d and its 'visualisation'
+# a function that returns, not only all the nodes at distance, but also the path for the 'visualisation'
 def functionality(node_id,d):
     visited = []
     dist = {}
