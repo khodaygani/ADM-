@@ -13,7 +13,7 @@ def functionality(starting_node, nodes_to_visit):
     # than the best path to visit them
     best_path = find_the_path(edges, starting_node, ordered_nodes)
 
-    return best_path  # than we return the best path
+    return vertices, best_path  # than we return the best path
 
 
 def __find_order(start, to_visit, coordinates):
