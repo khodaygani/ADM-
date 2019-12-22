@@ -8,6 +8,8 @@ The repository contains:
 
 The file main.py that can be ran to explore all the functionalities, initially you must chose the functionality, than you can insert the input of that functionality and see the plot shown.
 
+The file func_1.py that contains the functionality itself and a function that returns also the paths in order to get the 'visualisation'
+
 The file func_3.py that find the shortest path to visit all the nodes one after the other using the Dijkstra algorithm.
 
 The file func_4.py that use a heuristic solution for find out which is the best order in which you should visit the node (checking the air distance between them) and then using the Dijkstra algorithm, as in the third functionality.
