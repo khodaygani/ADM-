@@ -1,3 +1,4 @@
+import func_1  # importing functionality 1
 import func_3  # importing functionality 3
 import func_4  # importing functionality 4
 from plottingUtils import plottingOnMaps  # importing the plotting utils
@@ -9,8 +10,17 @@ if __name__ == '__main__':
 
 
     if func == 1:
-
-        # -------------> insert here your functionality
+        
+        # input
+        start = int(input("insert the starting node ID: "))
+        
+        d = int(input('insert the threshold: '))
+        
+        # running the functionality
+        nodes_at_dist,paths,nodes = func_1.functionality(start,d)
+        
+        # plotting
+        plottingOnMaps(nodes, path=paths, start=start)
 
     elif func == 2:
 
