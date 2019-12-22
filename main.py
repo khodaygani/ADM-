@@ -1,4 +1,5 @@
 import func_1  # importing functionality 1
+import func_2  # importing functionality 2
 import func_3  # importing functionality 3
 import func_4  # importing functionality 4
 from plottingUtils import plottingOnMaps  # importing the plotting utils
@@ -23,9 +24,20 @@ if __name__ == '__main__':
         plottingOnMaps(nodes, path=paths, start=start)
 
     elif func == 2:
+         # input
+        start = int(input("insert the starting node ID: "))
+        to_visit = list(map(int, input("insert the targets: ").split(" ")))
 
-        # -------------> insert here your functionality
+        try:  # running the functionality
+            nodes, path = func_2.functionality(start, to_visit)
+        except Exception:  # if one of those node is not reachable from the start we stop here.
+            print("Not possible")
+            sys.exit(0)  # stop the program, we don't want to plot.
 
+        plottingOnMaps(nodes, path=path)  # finally plotting!
+
+       
+    
     elif func == 3:
         # getting the input:
         start = int(input("insert the starting node ID: "))
