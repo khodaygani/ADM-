@@ -6,7 +6,7 @@ dario part 1
 
 daniele func. 1
 
-grees. func. 2
+greeshma. func. 2
 
 dario func. 3 and 4
 
